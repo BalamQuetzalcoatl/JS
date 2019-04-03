@@ -1,0 +1,39 @@
+  <span class="man-app h1">Bien {{ people.toLowerCase() }}</span> works! {{ hola }}
+<div *ngFor="let item of names">{{ item.name }} {{ item.status }}</div>
+<h1>Age: {{ getAge() }}</h1>
+<br/>
+  <div class="form-group">
+    <label for="">Nombre de la persona</label>
+    <input type="text" name="" id="" class="form-control" placeholder="Ingresar nombre" (input)="modificarPersona($event)"/>
+    <small id="helpId" class="text-muted">{{ personaName }}</small>
+  </div>
+<br/>
+<div *ngIf="personAdded" class="h5">People not added</div>
+<div *ngIf="!personAdded" class="h5">People added</div>
+<button class="btn btn-info btn-about" [disabled]="addedPeople" (click)="onCreatedPerson()">Adding people</button>
+
+<div class="row m-5">
+  <div class="col-12"><span>Resultado:</span> <span class="h3 calc">{{ modificar }}</span> </div>
+  <div class="col-4"><input type="text" [(ngModel)]="modificar" name="count" id="count" class="form-control" autocomplete="off" placeholder="Adding count"></div>
+</div>
+  <div class="row m-5">
+    <div class="col-12 h1 text-center">Calculation</div>
+    <div class="col-4"><input type="number" [(ngModel)]="val1" name="count" id="count" class="form-control" autocomplete="off" placeholder="Adding count"></div>
+    <div class="col-4"><input type="number" [(ngModel)]="val2" name="count" id="count" class="form-control" autocomplete="off" placeholder="Adding count"></div>
+    <div class="col-4 h3">{{ valResfull }}</div>
+  </div>
+
+  <div class="row m-4">
+    <div class="col-2">
+      <button class="btn btn-outline-danger" (click)="calculated('sum')">Sum</button>
+    </div>
+    <div class="col-2">
+      <button class="btn btn-outline-danger" (click)="calculated('rest')">Rest</button>
+    </div>
+    <div class="col-2">
+      <button class="btn btn-outline-danger" (click)="calculated('multi')">Multi</button>
+    </div>
+    <div class="col-2">
+      <button class="btn btn-outline-danger" (click)="calculated('div')">Div</button>
+    </div>
+  </div>
