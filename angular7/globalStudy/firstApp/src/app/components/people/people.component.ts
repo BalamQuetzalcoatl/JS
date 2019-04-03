@@ -31,10 +31,17 @@ export class PeopleComponent {
   people = 'Daniel';
   private Age = 24;
 
+  personAdded = true;
+  personaName = '';
   addedPeople = true;
+  modificar = 'Cantidad';
+  getAge = () => this.Age;
 
-  getAge = () => {
-    return this.Age;
+  onCreatedPerson = () => {
+    this.personAdded = false;
   }
 
+  modificarPersona = (event: Event) => {
+    this.personaName = (<HTMLInputElement>event.target).value;
+  }
 }
