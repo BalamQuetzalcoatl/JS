@@ -1,15 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-people',
   templateUrl: './people.component.html',
   styleUrls: ['./people.component.css']
 })
-export class PeopleComponent implements OnInit {
+export class PeopleComponent {
 
   constructor() { }
 
-  ngOnInit() {
+  names = [{
+    name: 'Leonard',
+    status: true
+  },
+  {
+    name: 'Penny',
+    status: false
+  },
+  {
+    name: 'Sheldo',
+    status: false
+  }
+];
+
+  hola = 'on the People';
+  people = 'Daniel';
+  private Age = 24;
+
+  getAge = () => {
+    return this.Age;
   }
 
 }

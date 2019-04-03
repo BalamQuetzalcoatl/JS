@@ -1,3 +1,5 @@
 <p>
-  people works!
+  <span class="man-app h1">Bien {{ people.toLowerCase() }}</span> works! {{ hola }}
 </p>
+<div *ngFor="let item of names">{{ item.name }} {{ item.status }}</div>
+<h1>Age: {{ getAge() }}</h1>
