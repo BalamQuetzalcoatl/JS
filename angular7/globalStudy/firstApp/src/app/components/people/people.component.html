@@ -3,3 +3,5 @@
 </p>
 <div *ngFor="let item of names">{{ item.name }} {{ item.status }}</div>
 <h1>Age: {{ getAge() }}</h1>
+<br/>
+<button class="btn btn-info btn-about" [disabled]="addedPeople">Adding people</button>

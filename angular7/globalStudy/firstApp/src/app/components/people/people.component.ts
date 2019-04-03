@@ -7,7 +7,11 @@ import { Component } from '@angular/core';
 })
 export class PeopleComponent {
 
-  constructor() { }
+  constructor() {
+    setTimeout(() => {
+      this.addedPeople = false;
+    }, 3000);
+  }
 
   names = [{
     name: 'Leonard',
@@ -26,6 +30,8 @@ export class PeopleComponent {
   hola = 'on the People';
   people = 'Daniel';
   private Age = 24;
+
+  addedPeople = true;
 
   getAge = () => {
     return this.Age;
