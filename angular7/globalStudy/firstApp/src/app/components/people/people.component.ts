@@ -35,6 +35,10 @@ export class PeopleComponent {
   personaName = '';
   addedPeople = true;
   modificar = 'Cantidad';
+  val1: number = null;
+  val2: number = null;
+  valResfull: number = null;
+
   getAge = () => this.Age;
 
   onCreatedPerson = () => {
@@ -43,5 +47,20 @@ export class PeopleComponent {
 
   modificarPersona = (event: Event) => {
     this.personaName = (<HTMLInputElement>event.target).value;
+  }
+
+  calculated = (tipo: string) => {
+    if (tipo === 'sum') {
+      return this.valResfull = (Number(this.val1) + Number(this.val2));
+    }
+    if (tipo === 'rest') {
+      return this.valResfull = (Number(this.val1) - Number(this.val2));
+    }
+    if (tipo === 'multi') {
+      return this.valResfull = (Number(this.val1) * Number(this.val2));
+    }
+    if (tipo === 'div') {
+      return this.valResfull = (Number(this.val1) / Number(this.val2));
+    }
   }
 }

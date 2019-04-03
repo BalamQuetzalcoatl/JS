@@ -16,3 +16,24 @@
   <div class="col-12"><span>Resultado:</span> <span class="h3 calc">{{ modificar }}</span> </div>
   <div class="col-4"><input type="text" [(ngModel)]="modificar" name="count" id="count" class="form-control" autocomplete="off" placeholder="Adding count"></div>
 </div>
+  <div class="row m-5">
+    <div class="col-12 h1 text-center">Calculation</div>
+    <div class="col-4"><input type="number" [(ngModel)]="val1" name="count" id="count" class="form-control" autocomplete="off" placeholder="Adding count"></div>
+    <div class="col-4"><input type="number" [(ngModel)]="val2" name="count" id="count" class="form-control" autocomplete="off" placeholder="Adding count"></div>
+    <div class="col-4 h3">{{ valResfull }}</div>
+  </div>
+
+  <div class="row m-4">
+    <div class="col-2">
+      <button class="btn btn-outline-danger" (click)="calculated('sum')">Sum</button>
+    </div>
+    <div class="col-2">
+      <button class="btn btn-outline-danger" (click)="calculated('rest')">Rest</button>
+    </div>
+    <div class="col-2">
+      <button class="btn btn-outline-danger" (click)="calculated('multi')">Multi</button>
+    </div>
+    <div class="col-2">
+      <button class="btn btn-outline-danger" (click)="calculated('div')">Div</button>
+    </div>
+  </div>
