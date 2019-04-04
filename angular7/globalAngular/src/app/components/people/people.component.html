@@ -15,15 +15,7 @@
     <div class="col-6">
       What cities do you want to visit:
       <div *ngIf="citiesVisited">
-        <div *ngFor="let item of citiesVisited" class="col-6">
-          <ol>
-            <li><span class="h5">id:</span> {{ item.id }}</li>
-            <li><span class="h5">citi:</span> {{ item.city }}</li>
-            <li><span class="h5">live:</span> {{ item.cointLive }}</li>
-            <li><span class="h5">study:</span> {{ item.cointStudy }}</li>
-            <li><span class="h5">top:</span> {{ item.numberTop }}</li>
-          </ol>
-        </div>
+        <app-people-for *ngFor="let item of citiesVisited; let i = index;" [people]="item"></app-people-for>
       </div>
       <div *ngIf="!citiesVisited">
         <div class="text-center h5">Don´t there cities in this moment</div>

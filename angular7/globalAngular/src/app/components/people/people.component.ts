@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
+import { LoginService } from './../../services/login.service';
 
 @Component({
   selector: 'app-people',
   templateUrl: './people.component.html',
-  styleUrls: ['./people.component.css']
+  styleUrls: ['./people.component.css'],
+  providers: [LoginService]
 })
 export class PeopleComponent {
 
-  constructor() {
+  constructor(private servicio: LoginService) {
     setTimeout(() => {
       this.buttonDisabled = false;
     }, 3000);
@@ -48,5 +50,6 @@ export class PeopleComponent {
 
   addedNames = () => {
     this.addedNameOther = true;
+    console.log(this.servicio.sendMessages('Mensaje'));
   }
 }
