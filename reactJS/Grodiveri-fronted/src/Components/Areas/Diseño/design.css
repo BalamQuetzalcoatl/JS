@@ -1,0 +1,32 @@
+@media only screen and (min-width: 200px) {
+  .ht-s {
+    color: white;
+    font-size: 24px;
+    margin-top: 8px;
+    font-weight: bolder;
+  }
+
+  .gt-s {
+    font-size: 24px;
+    margin-top: 5px;
+    font-weight: bolder;
+  }
+  .gt-title {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .ht {
+    font-size: 24px;
+    color: white;
+    margin-top: 5px;
+    font-weight: bolder;
+  }
+
+  .gt {
+    font-size: 24px;
+    margin-top: 5px;
+    font-weight: bolder;
+  }
+}

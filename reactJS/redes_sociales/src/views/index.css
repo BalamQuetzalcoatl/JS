@@ -1,0 +1,31 @@
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.login{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    height: 100vh;
+    margin-left: 50%;
+}
+
+.login-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.mg-bottom{
+    margin-bottom: 15px;
+}
+
+.card-content {
+    display: flex !important;
+    flex-direction: column;
+}
+.avatar{
+    width: 50px;
+    height: auto;
+    padding: 5px;
+}

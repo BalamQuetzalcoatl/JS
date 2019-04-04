@@ -1,0 +1,96 @@
+@media only screen and (min-width: 200px) {
+  .ht-s {
+    color: white;
+    font-size: 24px;
+    margin-top: 8px;
+    font-weight: bolder;
+  }
+
+  .gt-s {
+    font-size: 24px;
+    margin-top: 5px;
+    font-weight: bolder;
+  }
+  .gt-title {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .ht {
+    font-size: 24px;
+    color: white;
+    margin-top: 5px;
+    font-weight: bolder;
+  }
+
+  .gt {
+    font-size: 24px;
+    margin-top: 5px;
+    font-weight: bolder;
+  }
+}
+
+.t-touch {
+  touch-action: pan-y;
+}
+
+.no-display {
+  display: none;
+}
+
+.no-display-w {
+  display: none; width: 1205px;
+}
+
+.header-top {
+  height: 498px;
+}
+
+.para-lax-2 {
+  transform: translateY(0px); height: 498px;
+}
+
+.cursor-grab {
+  cursor: grab;
+}
+
+.para-lax-3 {
+  transform: translate3d(0px, 0px, 0px);
+}
+
+.save-background {
+  background-image: url('/images/slider/swiper/1.jpg'); 
+  height: 498px; width: 1265px;
+}
+
+.trans-y {
+  transform: translateY(0px); 
+  opacity: 1.37149; 
+  top: 176px;
+}
+
+.min-with {
+  height: 498px;
+  width: 1265px;
+}
+
+.min-top {
+  width: 1265px; height: 711.562px; top: -106.781px; display: none
+}
+
+.bg-colr {
+  background-color: rgba(0,0,0,0.55);
+}
+
+.bg-travel {
+  background-image: url('/images/videos/explore.jpg');
+}
+
+.gb {
+  transform: translateY(0px); opacity: 1.37149; top: 171px;
+}
+
+.opa-state {
+  opacity: 1.37149;
+}
