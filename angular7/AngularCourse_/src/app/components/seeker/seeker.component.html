@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="animated fadeIn">
+    <div class="row header-top">
+      <div class="col-md-12 text-center h2">
+        <div class="h4">
+          Super Heroes Marvel DC
+        </div>
+        <div *ngIf="search.length">
+          {{ 'Buscador' | uppercase }} = {{ search | uppercase }}
+        </div>
+      </div>
+    </div>
+    <div class="header-top">
+      <div class="card-columns" *ngIf="heroes.length">
+        <app-heroe-tarjets [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes" (selectHeroe) = "showHeroes(heroe.idx)" ></app-heroe-tarjets>
+      </div>
+        <div class="alert alert-warning  text-center animated fadeIn" role="alert" *ngIf="!heroes.length">
+          No hay datos encontrados
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="animated fadeIn">
+    <div class="row header-top">
+      <div class="col-md-12 text-center h1">
+        Super Heroes Marvel DC
+      </div>
+    </div>
+    <div class="header-top">
+      <div class="card-columns">
+        <app-heroe-tarjets (selectHeroe) = "showHeroes($event)" [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index;" ></app-heroe-tarjets>
+      </div>
+    </div>
+  </div>
+</div>

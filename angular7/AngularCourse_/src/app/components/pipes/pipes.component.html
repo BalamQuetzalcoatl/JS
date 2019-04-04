@@ -1,0 +1,194 @@
+<div class="fadein animated container pad-top">
+  <div class="card-columns">
+    <div class="card">
+      <img class="card-img-top img-fluid" src="assets/img/uppercase_and_lowercase.svg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Uppercase and Lowercase</h5>
+        <div class="card-text">
+           Using <samp>example</samp> to <samp>{{ 'example' | lowercase }}</samp>
+          <br>
+          <div class="text-center">
+            <samp>'example' | lowercase</samp>
+          </div>
+          <br>
+           Using <samp>example</samp> to <samp>{{ 'example' | uppercase }}</samp>
+          <br>
+          <div class="text-center">
+            <samp>'example' | uppercase</samp>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="card-img-top img-fluid" src="assets/img/JavaScript-Array-Slice-300x172.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Slice</h5>
+        <div class="card-text">
+          Using method <samp>slice:number</samp>
+          <br>
+          <samp>example</samp> to <samp>{{ 'example' | slice:3 }}</samp>
+            <br>
+          <samp>'example' | slice:3</samp>
+            <br>
+          Using method <samp>slice:number:number</samp>
+            <br>
+          <samp>example</samp> to <samp>{{ 'example' | slice:0:3 }}</samp>
+            <br>
+          <samp>'example' | slice:0:3</samp>
+            <br>
+         <div class="h1">Slice</div>
+            <ul>
+              <li *ngFor="let i of arreglo | slice:2:7">{{ i }}</li>
+            </ul>
+          <div class="card-text">
+            <br><samp>ngFor="let i of arreglo | slice:2:7"</samp>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="card-img-top img-fluid" src="assets/img/decimal.svg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Decimal</h5>
+        <div class="card-text">
+          <br>Using <samp>decimals {{ pi | number: '1.2-2' }}</samp>
+          <br>
+          <div class="text-center">
+            <samp>{{ pi }} | number: '1.2-2'</samp>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="card-img-top img-fluid" src="assets/img/percentage-icon.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Percent</h5>
+        <div class="card-text">
+          <br>Using <samp>percent {{ porcent_a | percent }}</samp>
+          <br>
+          <div class="text-center">
+            <samp>{{ porcent_a }} | percent</samp>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="card-img-top img-fluid" src="assets/img/cash-dollars.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Money</h5>
+        <div class="card-text">
+          <br>Using <samp>currency {{ money_a }}</samp>
+          <br>
+          <div class="text-center">
+            <samp>{{ money_a }} | currency</samp> = <samp>{{ money_a | currency }}</samp> <br>
+            <samp>{{ money_a }} | currency:'MXN'</samp> = <samp>{{ money_a | currency:'MXN' }}</samp> <br>
+            <samp>{{ money_a }} | currency:'MXN':true</samp> = <samp>{{ money_a | currency:'MXN':true }}</samp> <br>
+            <samp>{{ money_a }} | currency:'MXN':true:'4.0-0'</samp> = <samp>{{ money_a | currency:'MXN':true:'4.0-0' }}</samp>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="card-img-top img-fluid" src="assets/img/logo-json.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">JSON</h5>
+        <div class="card-text">
+          <br>Using <samp>json</samp>
+          <br>
+          <div class="text-center">
+            <samp>{{ json }} | currency</samp> = <samp>{{ json | json }}</samp>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="card-img-top img-fluid" src="assets/img/Async.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">ASYNC</h5>
+        <div class="card-text">
+          <br>Using <samp>async</samp>
+          <br>
+          <div class="text-center">
+            <samp> async_value | async</samp> = <samp>{{ promesa | async }}</samp>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="card-img-top img-fluid" src="assets/img/date.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Date</h5>
+        <div class="card-text">
+          <br>Using <samp>date <br> {{ dateTimer }}</samp>
+          <br>
+          <div class="text-center">
+            <br>Using <samp>short</samp>
+            <pre>date | date:'short'</pre> = <pre>{{ dateTimer | date:'short' }}</pre>
+            <br>Using <samp>medium</samp>
+            <pre>date | date:'medium'</pre> = <pre>{{ dateTimer | date:'medium' }}</pre>
+            <br>Using <samp>long</samp>
+            <pre>date | date:'long'</pre> = <pre>{{ dateTimer | date:'long' }}</pre>
+            <br>Using <samp>full</samp>
+            <pre>date | date:'full'</pre> = <pre>{{ dateTimer | date:'full' }}</pre>
+            <br>Using <samp>shortDate</samp>
+            <pre>date | date:'shortDate'</pre> = <pre>{{ dateTimer | date:'shortDate' }}</pre>
+            <br>Using <samp>mediumDate</samp>
+            <pre>date | date:'mediumDate'</pre> = <pre>{{ dateTimer | date:'mediumDate' }}</pre>
+            <br>Using <samp>longDate</samp>
+            <pre>date | date:'longDate'</pre> = <pre>{{ dateTimer | date:'longDate' }}</pre>
+            <br>Using <samp>fullDate</samp>
+            <pre>date | date:'fullDate'</pre> = <pre>{{ dateTimer | date:'fullDate' }}</pre>
+            <br>Using <samp>shortTime</samp>
+            <pre>date | date:'shortTime'</pre> = <pre>{{ dateTimer | date:'shortTime' }}</pre>
+            <br>Using <samp>mediumTime</samp>
+            <pre>date | date:'mediumTime'</pre> = <pre>{{ dateTimer | date:'mediumTime' }}</pre>
+            <br>Using <samp>longTime</samp>
+            <pre>date | date:'longTime'</pre> = <pre>{{ dateTimer | date:'longTime' }}</pre>
+            <br>Using <samp>fullTime</samp>
+            <pre>date | date:'fullTime'</pre> = <pre>{{ dateTimer | date:'fullTime' }}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="card-img-top img-fluid" src="assets/img/Youtube.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">DOM Security</h5>
+        <div class="card-text">
+          <div class="text-center">
+            <iframe width="310" height="145" [src]=" videoUrl | domsecurity: 'https://www.youtube.com/embed/'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="card-img-top img-fluid" src="assets/img/usuario-contrasena.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Homework</h5>
+        <div class="card-text">
+          <div class="text-center h3">
+            Status: <b>{{ activated }}</b>
+            <br>
+            <button type="button" name="button" (click)="activated = !activated" class="btn btn-info">{{ activated ? 'Desactivated':'Activated' }}</button>
+            <br> <br>
+            {{ name | password:activated }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

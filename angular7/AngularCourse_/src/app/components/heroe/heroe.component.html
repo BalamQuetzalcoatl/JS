@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="fadeIn animated">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center h1">
+          {{ heroe.nombre | uppercase }} <small>{{ heroe.aparicion | date:'fullDate' }}</small>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-4">
+        <img [src]="heroe.img" [alt]="heroe.img" class="img-fluid">
+        <div class="margen-top">
+          <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block">Come back</a>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="h3 text-center">
+          {{ heroe.nombre | uppercase }}
+        </div>
+        <hr>
+        <p>{{ heroe.bio }}</p>
+        <br>
+        <div class="text-center">
+          <img *ngIf="heroe.casa === 'Marvel'" src="assets/img/marvel-logo.png" [alt]="heroe.casa">
+          <img *ngIf="heroe.casa === 'DC'" src="assets/img/dc-logo.jpg" [alt]="heroe.casa" class="img-rigth">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="text-center h2">Formulario <small class="h5">test validation form</small></div>
+  <hr>
+  <form (ngSubmit)="guardar(forma)" #forma="ngForm">
+    <div class="row form-group">
+      <label class="col-1 col-form-label">Nombre</label>
+        <div class="col-11"> 
+          <input type="text" class="form-control" minlength="5" name="firstName" [(ngModel)]="usuario.firstName" autocomplete="off" placeholder="Nombre(s)" required #firstName="ngModel"/>
+          <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+            <div class="error-required" *ngIf="firstName.errors?.required">Esté campo es requerido</div>
+            <div class="error-required" *ngIf="firstName.errors?.minlength">Por lo menos {{ firstName.errors.minlength.requiredLength }} carácteres</div>
+          </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <label class="col-1 col-form-label">Apellido</label>
+      <div class="col-11">
+        <input type="text" [(ngModel)]="usuario.lastName" name="lastName" class="form-control" autocomplete="off" placeholder="Apellido(s)" required #lastName="ngModel" minlength="5"/>
+        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+          <div class="error-required" *ngIf="lastName.errors?.required">Esté campo es requerido</div>
+          <div class="error-required" *ngIf="lastName.errors?.minlength">Por lo menos {{ lastName.errors.minlength.requiredLength }}</div>          
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <label class="col-1 form-group">Email</label>
+      <div class="col-11">
+          <input type="text" name="email" [(ngModel)]="usuario.email" class="form-control" autocomplete="off" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" #email="ngModel"/> 
+          <div *ngIf="email.invalid && (email.touched || email.dirty)">
+            <div class="error-required" *ngIf="email.errors?.required">Esté campo es requerido</div>
+            <div class="error-required" *ngIf="email.errors?.pattern">El formato de Email es incorrecto</div>
+          </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <label class="col-1">País</label>
+        <div class="col-11">
+          <select class="form-control" [(ngModel)]="usuario.pais" name="country" #countriRef="ngModel" required>
+              <option value="" [selected]="isSelected"> Please choose one </option>
+            <option *ngFor="let item of countries" [value]="item.code" selected>{{item.name}}</option>
+          </select> 
+          <div *ngIf="countriRef.required">Esté campo no puede quedar vacío</div>
+        </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-1">Sexo</div>
+      <div class="col-11">
+          <div class="custom-control custom-radio marg-left" *ngFor="let item of radioButton">
+              <input type="radio" class="custom-control-input" [id]="item.id" name="defaultExampleRadios" [(ngModel)]="usuario.sex">
+              <label class="custom-control-label" [for]="item.id">{{item.sex}}</label>
+            </div>
+      </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-12">
+          <button class="btn btn-outline-info btn-block" type="submit" [disabled]="forma.invalid" [ngClass]="{'has-danger' : forma.invalid}">Guardar</button>
+        </div>
+    </div>
+  </form>
+  <div class="row">
+      {{ usuario | json }}
+    </div>
+</div>

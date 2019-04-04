@@ -1,0 +1,35 @@
+<app-loading *ngIf="loading"></app-loading>
+<div class="row m-5 animated fadeIn" *ngIf="!loading">
+  <div class="col-4">
+    <div class="card" style="width: 18rem;">
+      <img [src]="artist.images | noimages" alt="No found" class="card-img-top">
+
+      <div class="card-body">
+        <h5 class="card-title">{{ artist.name }}</h5>
+        <p class="card-text">{{ artist.label }}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item font-black h2" >Artistas:</li>
+        <li class="list-group-item font-black" *ngIf="artist.name" >{{ artist.name }}</li>
+        <li class="list-group-item font-black" *ngFor="let named of artist.artists">{{ named.name }}
+            <a href="{{named.href}}" target="_blank"><img src="assets/img/banner-ico.png" class="ert-10" alt=""></a>
+        </li>
+      </ul>
+      <div class="card-body">
+        <p *ngIf="artist.followers" class="font-black"><img src="assets/img/like.png" class="ert-10" alt=""> {{ artist.followers.total | number }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title text-center">
+          {{ artist.name }}
+        </h5>
+        <p class="card-text" *ngFor="let item of artist.copyrights">{{ item.text }}</p>
+        <p class="card-text"><small class="text-muted">{{ artist.release_date }}</small></p>
+      </div>
+    </div>
+  </div>
+
+</div>
