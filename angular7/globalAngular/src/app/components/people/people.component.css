@@ -1,3 +1,12 @@
 .header-top {
     margin: 40px 10px 25px 10px;
 }
+
+.title-button-f {
+    margin: 15px 12px 5px;
+}
+
+.second:disabled {
+    color: white;
+    background-color: crimson;
+}

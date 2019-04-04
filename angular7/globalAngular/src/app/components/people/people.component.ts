@@ -7,9 +7,36 @@ import { Component } from '@angular/core';
 })
 export class PeopleComponent {
 
-  constructor() { }
+  constructor() {
+    setTimeout(() => {
+      this.buttonDisabled = false;
+    }, 3000);
+  }
 
   peopleName = 'Hi Daniel';
   peopleLastName = 'Irlandes';
+
+  private city = 'New iceland';
+
+  buttonDisabled = true;
+
+  citiesVisited = [
+    {
+      id: '16478757',
+      city: 'Sydney',
+      numberTop: '1',
+      cointLive: '97.6',
+      cointStudy: '91.6'
+    },
+    {
+      id: '79651234',
+      city: 'New york',
+      numberTop: '2',
+      cointLive: '91.3',
+      cointStudy: '86.9'
+    }
+  ];
+
+  getCity = () => this.city;
 
 }
