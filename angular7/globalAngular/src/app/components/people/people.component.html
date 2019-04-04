@@ -55,13 +55,18 @@
        Nombre: {{ firstName }}  -  Apellidos: {{ secondName }}
     </div>
   </div>
-  <hr/>
+  <hr/> 
   <div class="row">
     <div class="col-12 text-center h1 title-button-f">
-      Event Binding
+      Event Binding  <ng-container *ngIf="people.length === 0; else elsePeople">
+        <span class="badge badge-warning">No there data</span>
+      </ng-container>
+      <ng-template #elsePeople>
+        <span class="badge badge-info">{{ people.length }}</span>
+      </ng-template>
     </div>
-    <div class="col-4">
-      <button></button>
+    <div class="col-4 margin-btn-flot"> <span class="label label-warning">{{ people.length }} r</span> 
+      <app-adde-people-for *ngFor="let item of people" [person]="item"></app-adde-people-for>
     </div>
   </div>
 </div>

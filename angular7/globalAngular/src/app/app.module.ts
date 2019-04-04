@@ -7,12 +7,14 @@ import { PeopleComponent } from './components/people/people.component';
 
 import { FormsModule } from '@angular/forms';
 import { PeopleForComponent } from './components/people/people-for/people-for.component';
+import { AddePeopleForComponent } from './components/people/adde-people-for/adde-people-for.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PeopleComponent,
-    PeopleForComponent
+    PeopleForComponent,
+    AddePeopleForComponent
   ],
   imports: [
     BrowserModule,

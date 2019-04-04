@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from './../../services/login.service';
-
+import { People } from './../../models/people.model';
 @Component({
   selector: 'app-people',
   templateUrl: './people.component.html',
@@ -14,6 +14,7 @@ export class PeopleComponent {
       this.buttonDisabled = false;
     }, 3000);
   }
+  people: People[] = [];
 
   peopleName = 'Hi Daniel';
   peopleLastName = 'Irlandes';
@@ -50,6 +51,13 @@ export class PeopleComponent {
 
   addedNames = () => {
     this.addedNameOther = true;
-    console.log(this.servicio.sendMessages('Mensaje'));
+    this.people.push(new People(this.firstName, this.secondName));
+    setTimeout(() => { this.resetInfo(); }, 2000);
+  }
+
+  resetInfo = () => {
+    this.firstName = '';
+    this.secondName = '';
+    this.addedNameOther = false;
   }
 }
