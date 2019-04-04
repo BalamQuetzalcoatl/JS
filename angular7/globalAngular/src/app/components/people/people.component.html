@@ -35,14 +35,41 @@
     <div class="col-12 text-center h1 title-button-f">
       Property Binding Angular
     </div>
+    <div class="col-3 header-top">
+      <input type="text" [(ngModel)]="firstName" class="form-control" [disabled]="buttonDisabled" placeholder="Nombre" autocomplete="off">
+    </div>
+    <div class="col-3 header-top">
+        <input type="text" [(ngModel)]="secondName" class="form-control" [disabled]="buttonDisabled" placeholder="Apellidos" autocomplete="off">
+    </div>
     <div class="col-4 header-top">
-      <button class="btn btn-primary btn-block second" [disabled]="buttonDisabled">
+      <button class="btn btn-primary btn-block second" [disabled]="buttonDisabled" (click)="addedNames()">
           <span class="h5" *ngIf="buttonDisabled">Espera ...</span>
           <span class="h5" *ngIf="!buttonDisabled">Agregar persona</span>
       </button>
     </div>
-    <div class="col-2 header-top">
-      
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-12 text-center">
+    <ng-container *ngIf="!addedNameOther; else elseTemplate">
+      <div class="h3">User not added</div>
+    </ng-container>
+    <ng-template #elseTemplate>
+        <div class="h3">User added</div>
+    </ng-template>
+    
+    </div>
+    <div class="col-12 text-center">
+       Nombre: {{ firstName }}  -  Apellidos: {{ secondName }}
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-12 text-center h1 title-button-f">
+      Event Binding
+    </div>
+    <div class="col-4">
+      <button></button>
     </div>
   </div>
 </div>

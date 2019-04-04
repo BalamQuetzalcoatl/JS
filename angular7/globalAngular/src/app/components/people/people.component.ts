@@ -16,9 +16,16 @@ export class PeopleComponent {
   peopleName = 'Hi Daniel';
   peopleLastName = 'Irlandes';
 
+  firstName = null;
+  secondName = null;
+
+  listNames: string[];
+
+  addedNameOther = false;
+
   private city = 'New iceland';
 
-  buttonDisabled = true;
+  buttonDisabled = false;
 
   citiesVisited = [
     {
@@ -39,4 +46,7 @@ export class PeopleComponent {
 
   getCity = () => this.city;
 
+  addedNames = () => {
+    this.addedNameOther = true;
+  }
 }
