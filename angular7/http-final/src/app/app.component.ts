@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from './persona.model';
-import { LoggingService } from './LoggingService.service';
 import { PersonasService } from './personas.service';
+import { DataService } from './data.service';
+
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,8 @@ import { PersonasService } from './personas.service';
 })
 export class AppComponent implements OnInit {
   titulo = 'Listado de Personas';
-
+  
   ngOnInit(): void {
-
+   
   }
 }
