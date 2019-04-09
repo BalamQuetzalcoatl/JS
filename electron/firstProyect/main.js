@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow, Menu} = require('electron')
+const {app, BrowserWindow, Menu, ipcMain} = require('electron')
 const url = require('url');
 const path = require('path');
 
@@ -60,7 +60,10 @@ const templateMenu = [
         }
       },
       {
-        label: 'Remove all products'
+        label: 'Remove all products',
+        click() {
+          mainWindow.webContents.send('products:remove-all');
+        }
       }
     ]
   },
@@ -122,6 +125,7 @@ if(process.env.NODE_ENV !== 'production'){
     submenu: [
       {
         label: 'Dev Tools',
+        accelerator: process.platform === 'darwin' ? 'command+D':'Ctrl+D',
         click(item, focusedWindow) {
           focusedWindow.toggleDevTools(); // focusedWindow.openDevTools();
         }
@@ -132,3 +136,8 @@ if(process.env.NODE_ENV !== 'production'){
     ]
   })
 }
+
+ipcMain.on('product:new', (e, newProduct) => {
+  mainWindow.webContents.send('product:new', newProduct);
+  newProductWindow.close();
+})
